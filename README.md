@@ -10,7 +10,7 @@ An iPhone-first SwiftUI shopping copilot that answers natural-language shopping 
 - Telbises product detail with variant selection and Shopify checkout.
 - Gen Z-friendly visual UI: vivid gradients, quick prompt chips, and bold card hierarchy.
 - Protocol-oriented services for easy AI provider swapping.
-- Live deal discovery via OpenAI web search (with fallback to feed/mock data).
+- Live deal discovery via OpenAI web search.
 - Mocked deal data fallback (no scraping in MVP).
 - Dark mode support and accessibility labels across interactive UI.
 
@@ -32,15 +32,17 @@ Set runtime environment variables in your Xcode scheme (`Edit Scheme` -> `Run` -
 - `AI_API_KEY` (LLM provider API key)
 - `AI_BASE_URL` (optional, default `https://api.openai.com`)
 - `AI_MODEL` (optional, default `gpt-4o-mini`)
+- `LIVE_DEALS_MODEL` (optional, default `gpt-4o-search-preview`)
 - `LIVE_DEALS_ENABLED` (optional, default `true`; set `false` to force mock/feed deals)
+- `LIVE_DEALS_FALLBACK_ENABLED` (optional, default `false`; set `true` to allow feed/mock fallback when live search fails)
 - `DEALS_FEED_URL` (optional remote JSON feed for deals)
 
-If `AI_API_KEY` is present and `LIVE_DEALS_ENABLED=true`, the app uses OpenAI web search for live deal discovery and falls back to mock/feed deals on failure.
+If `AI_API_KEY` is present and `LIVE_DEALS_ENABLED=true`, the app uses OpenAI web search for live deal discovery.
 If keys are missing, the app falls back to local mock data/services.
 
 ## Live Deal Notes
 - Live deal results depend on your OpenAI model/tool access and network availability.
-- If OpenAI web search is unavailable, the app automatically falls back to `DEALS_FEED_URL` (if set) and then bundled mock data.
+- If OpenAI web search is unavailable, the app returns a live-search error by default (no mock mixing). Set `LIVE_DEALS_FALLBACK_ENABLED=true` to allow fallback.
 - Telbises recommendations remain explicitly disclosed as promoted premium options when relevant.
 
 ## Run

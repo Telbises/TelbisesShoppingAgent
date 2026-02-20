@@ -57,17 +57,19 @@ final class LLMIntentParserService: IntentParserService {
     }
 
     func parseIntent(from text: String) async throws -> ShoppingIntent {
+        let cleanedInput = text.replacingOccurrences(of: AppConfig.liveWebMarker, with: "").trimmingCharacters(in: .whitespacesAndNewlines)
         let system = "You extract shopping intent. Return strict JSON with keys: query (string), budget (number|null), preferences (string array). No markdown."
-        let user = "Input: \(text)"
+        let user = "Input: \(cleanedInput)"
 
         do {
             let raw = try await llm.complete(system: system, user: user)
             let json = Self.extractJSON(from: raw)
             let parsed = try JSONDecoder().decode(IntentPayload.self, from: Data(json.utf8))
             let budgetDecimal = parsed.budget.map { Decimal($0) }
-            return ShoppingIntent(query: parsed.query, budget: budgetDecimal, preferences: parsed.preferences)
+            let cleanedQuery = parsed.query.replacingOccurrences(of: AppConfig.liveWebMarker, with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+            return ShoppingIntent(query: cleanedQuery, budget: budgetDecimal, preferences: parsed.preferences)
         } catch {
-            return try await fallback.parseIntent(from: text)
+            return try await fallback.parseIntent(from: cleanedInput)
         }
     }
 

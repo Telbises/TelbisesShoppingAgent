@@ -32,6 +32,26 @@ final class HomeChatViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.inputText.isEmpty)
     }
 
+    func testSendMessageLiveOnlyAppendsLiveWebMarker() async {
+        let agent = MockShoppingAgent(payload: TestFixtures.resultsPayload(summary: "Done"), error: nil)
+        let viewModel = HomeChatViewModel(agent: agent)
+
+        viewModel.inputText = "iphone 15 pro max deals"
+        await viewModel.sendMessage(liveOnly: true)
+
+        XCTAssertEqual(agent.lastIntentText, "iphone 15 pro max deals \(AppConfig.liveWebMarker)")
+    }
+
+    func testSendMessageDefaultDoesNotAppendLiveWebMarker() async {
+        let agent = MockShoppingAgent(payload: TestFixtures.resultsPayload(summary: "Done"), error: nil)
+        let viewModel = HomeChatViewModel(agent: agent)
+
+        viewModel.inputText = "iphone 15 pro max deals"
+        await viewModel.sendMessage()
+
+        XCTAssertEqual(agent.lastIntentText, "iphone 15 pro max deals")
+    }
+
     func testSendMessageSetsErrorMessageOnAgentFailure() async {
         let agent = MockShoppingAgent(payload: nil, error: TestAgentError.fail)
         let viewModel = HomeChatViewModel(agent: agent)
@@ -54,6 +74,43 @@ final class HomeChatViewModelTests: XCTestCase {
 
         XCTAssertEqual(viewModel.messages.count, 0)
     }
+
+    func testApplyVoiceTranscriptUpdatesInputText() {
+        let viewModel = HomeChatViewModel(agent: MockShoppingAgent(payload: TestFixtures.resultsPayload(summary: "Done"), error: nil))
+
+        viewModel.applyVoiceTranscript("find used airpods pro")
+
+        XCTAssertEqual(viewModel.inputText, "find used airpods pro")
+    }
+
+    func testSearchUsingImageBuildsQueryAndSendsLiveMessage() async {
+        let payload = TestFixtures.resultsPayload(summary: "Image search results")
+        let agent = MockShoppingAgent(payload: payload, error: nil)
+        let viewModel = HomeChatViewModel(
+            agent: agent,
+            imageQueryBuilder: { _ in "used iphone 15 pro max deals" }
+        )
+
+        await viewModel.searchUsingImage(Data([0x01, 0x02]), liveOnly: true)
+
+        XCTAssertEqual(agent.lastIntentText, "used iphone 15 pro max deals \(AppConfig.liveWebMarker)")
+        XCTAssertEqual(viewModel.messages.first?.text, "used iphone 15 pro max deals")
+        XCTAssertEqual(viewModel.messages.last?.text, "Image search results")
+        XCTAssertTrue(viewModel.inputText.isEmpty)
+    }
+
+    func testSearchUsingImageSetsErrorWhenImageParsingFails() async {
+        let agent = MockShoppingAgent(payload: TestFixtures.resultsPayload(summary: "Done"), error: nil)
+        let viewModel = HomeChatViewModel(
+            agent: agent,
+            imageQueryBuilder: { _ in throw TestAgentError.fail }
+        )
+
+        await viewModel.searchUsingImage(Data([0x01]), liveOnly: true)
+
+        XCTAssertEqual(viewModel.errorMessage, "Couldn't analyze the image. Please try another photo.")
+        XCTAssertEqual(viewModel.messages.count, 0)
+    }
 }
 
 private enum TestAgentError: Error { case fail }
@@ -61,6 +118,7 @@ private enum TestAgentError: Error { case fail }
 private final class MockShoppingAgent: ShoppingAgent {
     let payload: ResultsPayload?
     let error: Error?
+    private(set) var lastIntentText: String?
 
     init(payload: ResultsPayload?, error: Error?) {
         self.payload = payload
@@ -68,6 +126,7 @@ private final class MockShoppingAgent: ShoppingAgent {
     }
 
     func run(intentText: String) async throws -> ResultsPayload {
+        lastIntentText = intentText
         if let e = error { throw e }
         guard let p = payload else { throw TestAgentError.fail }
         return p

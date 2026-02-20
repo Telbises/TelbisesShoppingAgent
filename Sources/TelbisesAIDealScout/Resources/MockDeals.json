@@ -1,6 +1,39 @@
 [
   {
     "id": "deal-1",
+    "title": "Refurbished iPhone 14 (128GB)",
+    "price": 499.00,
+    "currency": "USD",
+    "shipping": "Free shipping",
+    "source": "Back Market",
+    "imageURL": "https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop",
+    "dealURL": "https://www.backmarket.com/en-us/l/iphone-14/6d95d43d-924e-4f6c-8f42-87f2e9f48435",
+    "isSponsored": false
+  },
+  {
+    "id": "deal-2",
+    "title": "Gaming Laptop RTX 4060",
+    "price": 899.99,
+    "currency": "USD",
+    "shipping": "Ships in 2 days",
+    "source": "Best Buy",
+    "imageURL": "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop",
+    "dealURL": "https://www.bestbuy.com/site/searchpage.jsp?st=gaming+laptop+rtx+4060",
+    "isSponsored": false
+  },
+  {
+    "id": "deal-3",
+    "title": "Apple AirPods Pro (2nd Gen)",
+    "price": 189.99,
+    "currency": "USD",
+    "shipping": "Free pickup today",
+    "source": "Target",
+    "imageURL": "https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop",
+    "dealURL": "https://www.target.com/s?searchTerm=airpods+pro",
+    "isSponsored": false
+  },
+  {
+    "id": "deal-4",
     "title": "Everyday Midi Dress",
     "price": 39.99,
     "currency": "USD",
@@ -8,28 +41,6 @@
     "source": "StyleMart",
     "imageURL": "https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop",
     "dealURL": "https://www.macys.com/shop/womens-clothing?id=118",
-    "isSponsored": false
-  },
-  {
-    "id": "deal-2",
-    "title": "Linen Summer Dress",
-    "price": 54.00,
-    "currency": "USD",
-    "shipping": "$4.99 flat rate",
-    "source": "Urban Wardrobe",
-    "imageURL": "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop",
-    "dealURL": "https://www.nordstrom.com/browse/women/clothing/dresses",
-    "isSponsored": false
-  },
-  {
-    "id": "deal-3",
-    "title": "Budget Wrap Dress",
-    "price": 29.50,
-    "currency": "USD",
-    "shipping": "Ships in 3-5 days",
-    "source": "TrendOutlet",
-    "imageURL": "https://images.pexels.com/photos/8386647/pexels-photo-8386647.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop",
-    "dealURL": "https://www.target.com/c/dresses-women-s-clothing/-/N-5xtc3",
     "isSponsored": false
   }
 ]

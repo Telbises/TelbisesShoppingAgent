@@ -2,7 +2,43 @@ import Foundation
 
 final class MockIntentParserService: IntentParserService {
     func parseIntent(from text: String) async throws -> ShoppingIntent {
-        ShoppingIntent(query: text, budget: nil, preferences: [])
+        let cleaned = text.replacingOccurrences(of: AppConfig.liveWebMarker, with: "").trimmingCharacters(in: .whitespacesAndNewlines)
+        let budget = extractBudget(from: cleaned)
+        let preferences = extractPreferences(from: cleaned)
+        return ShoppingIntent(query: cleaned, budget: budget, preferences: preferences)
+    }
+
+    private func extractBudget(from text: String) -> Decimal? {
+        let lowered = text.lowercased()
+        guard lowered.contains("under") || lowered.contains("below") || lowered.contains("less than") || lowered.contains("up to") else {
+            return nil
+        }
+
+        let patterns = [
+            "(?:under|below|less than|up to)\\s*\\$?([0-9]+(?:\\.[0-9]{1,2})?)",
+            "\\$([0-9]+(?:\\.[0-9]{1,2})?)"
+        ]
+
+        for pattern in patterns {
+            guard let regex = try? NSRegularExpression(pattern: pattern) else { continue }
+            let range = NSRange(lowered.startIndex..<lowered.endIndex, in: lowered)
+            guard let match = regex.firstMatch(in: lowered, options: [], range: range), match.numberOfRanges > 1,
+                  let valueRange = Range(match.range(at: 1), in: lowered) else { continue }
+            let number = String(lowered[valueRange])
+            if let budget = Decimal(string: number) {
+                return budget
+            }
+        }
+        return nil
+    }
+
+    private func extractPreferences(from text: String) -> [String] {
+        let lowered = text.lowercased()
+        var preferences: [String] = []
+        if lowered.contains("used") || lowered.contains("refurbished") || lowered.contains("preowned") {
+            preferences.append("used")
+        }
+        return preferences
     }
 }
 
@@ -16,11 +52,60 @@ final class MockDealScoutService: DealScoutService {
     func fetchDeals(for intent: ShoppingIntent) async throws -> [Deal] {
         do {
             let deals = try await provider.loadDeals()
-            if deals.isEmpty { return FallbackData.deals }
-            return deals
+            let dataset = deals.isEmpty ? FallbackData.deals : deals
+            return rankByIntent(dataset, intent: intent)
         } catch {
-            return FallbackData.deals
+            return rankByIntent(FallbackData.deals, intent: intent)
         }
+    }
+
+    private func rankByIntent(_ deals: [Deal], intent: ShoppingIntent) -> [Deal] {
+        let tokens = intent.query
+            .lowercased()
+            .split { !$0.isLetter && !$0.isNumber }
+            .map(String.init)
+            .filter { $0.count >= 3 }
+
+        guard !tokens.isEmpty else { return deals }
+
+        let ranked = deals
+            .map { deal -> (Deal, Int) in
+                let haystack = "\(deal.title.lowercased()) \(deal.source.lowercased())"
+                let score = tokens.filter { haystack.contains($0) }.count
+                return (deal, score)
+            }
+            .sorted { lhs, rhs in
+                if lhs.1 == rhs.1 {
+                    return lhs.0.price < rhs.0.price
+                }
+                return lhs.1 > rhs.1
+            }
+
+        let positive = ranked.filter { $0.1 > 0 }.map(\.0)
+        if !positive.isEmpty { return Array(positive.prefix(8)) }
+
+        if looksLikeElectronicsQuery(tokens) {
+            return FallbackData.electronicsDeals
+        }
+
+        if looksLikeFashionQuery(tokens) {
+            return FallbackData.fashionDeals
+        }
+
+        return Array(ranked.map(\.0).prefix(8))
+    }
+
+    private func looksLikeElectronicsQuery(_ tokens: [String]) -> Bool {
+        let keywords: Set<String> = [
+            "iphone", "ipad", "macbook", "laptop", "gaming", "rtx", "gpu", "cpu", "electronics",
+            "airpods", "phone", "smartphone", "monitor", "keyboard", "headphones", "tablet", "tv"
+        ]
+        return tokens.contains(where: { keywords.contains($0) })
+    }
+
+    private func looksLikeFashionQuery(_ tokens: [String]) -> Bool {
+        let keywords: Set<String> = ["dress", "fashion", "hoodie", "shirt", "outfit", "linen", "wrap", "sneakers"]
+        return tokens.contains(where: { keywords.contains($0) })
     }
 }
 
@@ -177,6 +262,39 @@ private enum FallbackData {
     static let deals: [Deal] = [
         Deal(
             id: "deal-fallback-1",
+            title: "Refurbished iPhone 14 (128GB)",
+            price: Decimal(string: "499.00") ?? 499.00,
+            currency: "USD",
+            shipping: "Free shipping",
+            source: "Back Market",
+            imageURL: URL(string: "https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop"),
+            dealURL: URL(string: "https://www.backmarket.com/en-us/l/iphone-14/6d95d43d-924e-4f6c-8f42-87f2e9f48435")!,
+            isSponsored: false
+        ),
+        Deal(
+            id: "deal-fallback-2",
+            title: "Gaming Laptop RTX 4060",
+            price: Decimal(string: "899.99") ?? 899.99,
+            currency: "USD",
+            shipping: "Ships in 2 days",
+            source: "Best Buy",
+            imageURL: URL(string: "https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop"),
+            dealURL: URL(string: "https://www.bestbuy.com/site/searchpage.jsp?st=gaming+laptop+rtx+4060")!,
+            isSponsored: false
+        ),
+        Deal(
+            id: "deal-fallback-3",
+            title: "Apple AirPods Pro (2nd Gen)",
+            price: Decimal(string: "189.99") ?? 189.99,
+            currency: "USD",
+            shipping: "Free pickup today",
+            source: "Target",
+            imageURL: URL(string: "https://images.pexels.com/photos/3780681/pexels-photo-3780681.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop"),
+            dealURL: URL(string: "https://www.target.com/s?searchTerm=airpods+pro")!,
+            isSponsored: false
+        ),
+        Deal(
+            id: "deal-fallback-4",
             title: "Everyday Midi Dress",
             price: Decimal(string: "39.99") ?? 39.99,
             currency: "USD",
@@ -185,19 +303,15 @@ private enum FallbackData {
             imageURL: URL(string: "https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop"),
             dealURL: URL(string: "https://www.macys.com/shop/womens-clothing?id=118")!,
             isSponsored: false
-        ),
-        Deal(
-            id: "deal-fallback-2",
-            title: "Linen Summer Dress",
-            price: Decimal(string: "54.00") ?? 54.00,
-            currency: "USD",
-            shipping: "$4.99 flat rate",
-            source: "Urban Wardrobe",
-            imageURL: URL(string: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=640&h=640&fit=crop"),
-            dealURL: URL(string: "https://www.nordstrom.com/browse/women/clothing/dresses")!,
-            isSponsored: false
         )
     ]
+
+    static let electronicsDeals: [Deal] = deals.filter { deal in
+        let text = "\(deal.title.lowercased()) \(deal.source.lowercased())"
+        return text.contains("iphone") || text.contains("laptop") || text.contains("airpods")
+    }
+
+    static let fashionDeals: [Deal] = deals.filter { $0.title.lowercased().contains("dress") }
 
     static let telbisesProducts: [TelbisesProduct] = [
         TelbisesProduct(
