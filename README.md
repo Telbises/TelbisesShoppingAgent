@@ -1,6 +1,6 @@
 # Telbises AI
 
-An iOS 17+ SwiftUI shopping copilot that answers natural-language shopping queries with Perplexity-style summaries, ranked recommendations, citations, and context-aware Telbises premium picks.
+An iPhone-first SwiftUI shopping copilot that answers natural-language shopping queries with Perplexity-style summaries, transparent ranking, source citations, and context-aware Telbises premium picks.
 
 ## Features
 - AI chat home screen with intent capture.
@@ -8,8 +8,10 @@ An iOS 17+ SwiftUI shopping copilot that answers natural-language shopping queri
 - Weighted transparent ranking (relevance, price value, shipping, source confidence).
 - Save-to-favorites and 2-3 item compare sheet.
 - Telbises product detail with variant selection and Shopify checkout.
+- Gen Z-friendly visual UI: vivid gradients, quick prompt chips, and bold card hierarchy.
 - Protocol-oriented services for easy AI provider swapping.
-- Mocked deal data (no scraping).
+- Live deal discovery via OpenAI web search (with fallback to feed/mock data).
+- Mocked deal data fallback (no scraping in MVP).
 - Dark mode support and accessibility labels across interactive UI.
 
 ## Project Structure
@@ -17,7 +19,7 @@ An iOS 17+ SwiftUI shopping copilot that answers natural-language shopping queri
 - `Sources/TelbisesAIDealScout/Core` Config and coordination
 - `Sources/TelbisesAIDealScout/AI` Mock services and AI-facing logic
 - `Sources/TelbisesAIDealScout/Agents` Orchestration agent + recommendation synthesis
-- `Sources/TelbisesAIDealScout/Services` Protocols + Shopify stub
+- `Sources/TelbisesAIDealScout/Services` Protocols + Shopify integration
 - `Sources/TelbisesAIDealScout/Features` MVVM views
 - `Sources/TelbisesAIDealScout/Models` Data models
 - `Sources/TelbisesAIDealScout/UIComponents` Reusable UI
@@ -35,6 +37,11 @@ Set runtime environment variables in your Xcode scheme (`Edit Scheme` -> `Run` -
 
 If `AI_API_KEY` is present and `LIVE_DEALS_ENABLED=true`, the app uses OpenAI web search for live deal discovery and falls back to mock/feed deals on failure.
 If keys are missing, the app falls back to local mock data/services.
+
+## Live Deal Notes
+- Live deal results depend on your OpenAI model/tool access and network availability.
+- If OpenAI web search is unavailable, the app automatically falls back to `DEALS_FEED_URL` (if set) and then bundled mock data.
+- Telbises recommendations remain explicitly disclosed as promoted premium options when relevant.
 
 ## Run
 1. Open `Package.swift` in Xcode 15+.
@@ -61,7 +68,7 @@ Use your installed simulator name (e.g. `iPhone 17`, `iPhone 16`) from **Xcode �
 Unit tests live in `Tests/TelbisesAIDealScoutTests`. Run them in Xcode (⌘U) or from the command line:
 
 ```bash
-xcodebuild test -scheme TelbisesAIDealScout -destination 'platform=iOS Simulator,name=iPhone 17,OS=latest' -only-testing:TelbisesAIDealScoutTests
+xcodebuild test -project TelbisesAIDealScout.xcodeproj -scheme TelbisesAIDealScoutTests -destination 'platform=iOS Simulator,name=iPhone 17,OS=latest'
 ```
 
 Use an available simulator name from **Xcode → Window → Devices and Simulators** if `iPhone 17` is not installed.
@@ -76,6 +83,13 @@ Use an available simulator name from **Xcode → Window → Devices and Simulato
 - Swap external deal APIs through `DealProvider`.
 - Replace or extend Shopify integration in `ShopifyStorefrontService`.
 - Tune ranking behavior in `DefaultRankingService`.
+
+## Regenerate Project
+If source files are added/removed, regenerate the Xcode project:
+
+```bash
+ruby scripts/generate_xcodeproj.rb
+```
 
 ## Compliance Notes
 - External links open in `SFSafariViewController`.
