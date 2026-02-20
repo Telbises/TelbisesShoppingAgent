@@ -1,0 +1,31 @@
+[
+  {
+    "id": "telbises-1",
+    "title": "Telbises Signature Satin Dress",
+    "description": "A premium satin dress with limited drop sizing and artisan stitching.",
+    "price": 129.00,
+    "currency": "USD",
+    "imageURL": "https://cdn.shopify.com/s/files/1/0512/8195/2940/products/b521aac55ca8f58c72c7f68a0a70a8bf_10a84a1c-956b-42cc-bfee-8e4fc1a2c599_140x140.jpg?v=1661308979",
+    "variants": [
+      {
+        "id": "telbises-1-s",
+        "title": "Small",
+        "price": 129.00,
+        "inStock": true
+      },
+      {
+        "id": "telbises-1-m",
+        "title": "Medium",
+        "price": 129.00,
+        "inStock": true
+      },
+      {
+        "id": "telbises-1-l",
+        "title": "Large",
+        "price": 129.00,
+        "inStock": false
+      }
+    ],
+    "shopifyCheckoutURL": "https://telbises.com"
+  }
+]

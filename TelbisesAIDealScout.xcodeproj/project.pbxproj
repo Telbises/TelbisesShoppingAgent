@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0181026654AC2F52AEFD4221 /* MockIntentParserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD63B1C12B6D1BCE86F2EA3C /* MockIntentParserServiceTests.swift */; };
+		08BF8747DF82DE75238A3097 /* BrandTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76BCFCD346C3B61E3709A17 /* BrandTheme.swift */; };
+		12AF2D0981BDC2DF8E3DC368 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A267F85373749E72CB2E655 /* AppCoordinator.swift */; };
+		1377724122DCBA3B853BC1D6 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F2E44E5A52A451D4EBCD2 /* Services.swift */; };
+		157869EE72805CD55270153A /* ShopifyStorefrontService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961EC2B4B8B3559000A9E7D /* ShopifyStorefrontService.swift */; };
+		184EC0E56395368F27A9B51F /* HomeChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F65883105F65DCC382732F /* HomeChatViewModel.swift */; };
+		1B3B0FED9638120EE1AC9527 /* DefaultExplanationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34908E343678634EE35FE70 /* DefaultExplanationServiceTests.swift */; };
+		1D74FB0C729D7182C2140FBC /* TelbisesAIDealScout.app in Frameworks */ = {isa = PBXBuildFile; fileRef = 5395785A02736E787FCA89E0 /* TelbisesAIDealScout.app */; };
+		2932931BF1E569F0F66FB5C9 /* LLMServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCF75D6F10FA44C5FB0FBC9 /* LLMServices.swift */; };
+		2F6BBB29EA242C1067344894 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53B96F16A3869E64357C08 /* CartViewModel.swift */; };
+		2F7C9240064E3EFEE8B99598 /* DealProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8883E6CEA2D151094AAD15E /* DealProvider.swift */; };
+		2FD90D232D982C8C60B9C962 /* StubServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4667774024E87044C0254838 /* StubServices.swift */; };
+		34BB5AA54FC5EA3324471AF2 /* TestFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079AA01EB933871046CD7FA /* TestFixtures.swift */; };
+		420335451DBC16E284140F71 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E81EF45EEC3F301F370F1B /* CartView.swift */; };
+		47F6DDDA64EF536F276C0735 /* ResultsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA001063C054E149AD36B89C /* ResultsViewModelTests.swift */; };
+		4FD6C603A07EFE070A236B6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213AE78D20C618BA78D60A44 /* Foundation.framework */; };
+		591A83067A0CDF756D30EAD7 /* DefaultShoppingAgentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D32803639B4B03842F9CB39 /* DefaultShoppingAgentTests.swift */; };
+		5D0739EDAC1D61FC4B1C7B19 /* TelbisesAIDealScoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E442041266CA55677670A82D /* TelbisesAIDealScoutApp.swift */; };
+		6335F60CB3F3B4F4F079500A /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F9F53989DB5EDD0DD76A89 /* ResultsView.swift */; };
+		798E419F2B5D4BB232583F5A /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB9A800AB043809436B02F2 /* SafariView.swift */; };
+		7E27625B71699A8F552CD3EA /* ShoppingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E772BD36D3EE0C3468A6BB /* ShoppingAgent.swift */; };
+		88EE69BE2F78E258CA1F0109 /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A65028E59094156224FE21D /* ServiceContainer.swift */; };
+		8955BD4EF07991C9130A54ED /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E29CB290FFD8D90A5C452F2 /* AppConfig.swift */; };
+		8E08F328380052A29DE30558 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6685FCE699026D183735CAA /* AppRootView.swift */; };
+		9016876BA2804B186A3BC569 /* TelbisesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FB12364BC3285EAE9F3667 /* TelbisesDetailViewModel.swift */; };
+		973894C0700295D1F4484349 /* DealCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229DC73AF273072B640368B1 /* DealCardView.swift */; };
+		999274AC555E02A42B3DCB3A /* OpenAILiveDealScoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78495179CCDBC2605E9E01F /* OpenAILiveDealScoutService.swift */; };
+		9E94AB152122B144708497DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 213AE78D20C618BA78D60A44 /* Foundation.framework */; };
+		A1E7197A6E78DC7A6D3F6F93 /* MockDeals.json in Resources */ = {isa = PBXBuildFile; fileRef = F0B536C7B28A1AAE1579A342 /* MockDeals.json */; };
+		AF1E3D135ACE0F5758A9C28D /* MockServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9753021235650E9C734793 /* MockServices.swift */; };
+		B718566C73C55D64A5F5CEF4 /* CartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B444F55492EF489C9523831 /* CartViewModelTests.swift */; };
+		B9B60EB399EC1344CBE593C1 /* HomeChatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7F02761AA186E293522567 /* HomeChatViewModelTests.swift */; };
+		C53B97D6B380748DD3CF0221 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074BDCFDF89CE598896B88A /* ResultsViewModel.swift */; };
+		D2C108E947F68C4D77218E1F /* TelbisesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315433FCC1C5CDBF65E07149 /* TelbisesDetailView.swift */; };
+		D9E76FFF0413E9EEDA73BBED /* DefaultRankingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24DB1001F21147952D220B8 /* DefaultRankingServiceTests.swift */; };
+		E1DEF5C3C2D42650C16B3D10 /* MockTelbisesCatalog.json in Resources */ = {isa = PBXBuildFile; fileRef = 6632CD0CE3900C730E195785 /* MockTelbisesCatalog.json */; };
+		E43C0DCB439281968380764F /* TelbisesDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61EF1AF41C52158CE247FB8 /* TelbisesDetailViewModelTests.swift */; };
+		E6F8A819609DB9D40B87EEB9 /* TelbisesCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC008BF43B6ADEA7CA051D17 /* TelbisesCardView.swift */; };
+		F1BACF76335CF361BA42EB49 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B60C461BC47EE355B484D1 /* Models.swift */; };
+		F465E8C2FF67A0EB0F9CE2E8 /* FallbackTelbisesCatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2525CADE7004B5D89B47C004 /* FallbackTelbisesCatalogService.swift */; };
+		FF57BE90601B6809A413B4CD /* HomeChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8FE35E01C36FB5A7534F32 /* HomeChatView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EE6541C4B53707EB23A8DD6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B736C8E5580786D06B878882 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 61416132271000CCE8D2443D;
+			remoteInfo = TelbisesAIDealScout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0079AA01EB933871046CD7FA /* TestFixtures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TestFixtures.swift; path = Tests/TelbisesAIDealScoutTests/TestFixtures.swift; sourceTree = "<group>"; };
+		0E29CB290FFD8D90A5C452F2 /* AppConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppConfig.swift; path = Sources/TelbisesAIDealScout/Core/AppConfig.swift; sourceTree = "<group>"; };
+		213AE78D20C618BA78D60A44 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		229DC73AF273072B640368B1 /* DealCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DealCardView.swift; path = Sources/TelbisesAIDealScout/UIComponents/DealCardView.swift; sourceTree = "<group>"; };
+		2525CADE7004B5D89B47C004 /* FallbackTelbisesCatalogService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FallbackTelbisesCatalogService.swift; path = Sources/TelbisesAIDealScout/Services/FallbackTelbisesCatalogService.swift; sourceTree = "<group>"; };
+		2BB9A800AB043809436B02F2 /* SafariView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SafariView.swift; path = Sources/TelbisesAIDealScout/UIComponents/SafariView.swift; sourceTree = "<group>"; };
+		3074BDCFDF89CE598896B88A /* ResultsViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultsViewModel.swift; path = Sources/TelbisesAIDealScout/Features/Results/ResultsViewModel.swift; sourceTree = "<group>"; };
+		315433FCC1C5CDBF65E07149 /* TelbisesDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TelbisesDetailView.swift; path = Sources/TelbisesAIDealScout/Features/Telbises/TelbisesDetailView.swift; sourceTree = "<group>"; };
+		3C9753021235650E9C734793 /* MockServices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockServices.swift; path = Sources/TelbisesAIDealScout/AI/MockServices.swift; sourceTree = "<group>"; };
+		4667774024E87044C0254838 /* StubServices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StubServices.swift; path = Tests/TelbisesAIDealScoutTests/StubServices.swift; sourceTree = "<group>"; };
+		4A65028E59094156224FE21D /* ServiceContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServiceContainer.swift; path = Sources/TelbisesAIDealScout/Core/ServiceContainer.swift; sourceTree = "<group>"; };
+		4D8FE35E01C36FB5A7534F32 /* HomeChatView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HomeChatView.swift; path = Sources/TelbisesAIDealScout/Features/Chat/HomeChatView.swift; sourceTree = "<group>"; };
+		4FCF75D6F10FA44C5FB0FBC9 /* LLMServices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LLMServices.swift; path = Sources/TelbisesAIDealScout/AI/LLMServices.swift; sourceTree = "<group>"; };
+		5395785A02736E787FCA89E0 /* TelbisesAIDealScout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TelbisesAIDealScout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A267F85373749E72CB2E655 /* AppCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppCoordinator.swift; path = Sources/TelbisesAIDealScout/Core/AppCoordinator.swift; sourceTree = "<group>"; };
+		5C9002207F95911A564DDC8A /* TelbisesAIDealScoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TelbisesAIDealScoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64F65883105F65DCC382732F /* HomeChatViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HomeChatViewModel.swift; path = Sources/TelbisesAIDealScout/Features/Chat/HomeChatViewModel.swift; sourceTree = "<group>"; };
+		6632CD0CE3900C730E195785 /* MockTelbisesCatalog.json */ = {isa = PBXFileReference; includeInIndex = 1; name = MockTelbisesCatalog.json; path = Sources/TelbisesAIDealScout/Resources/MockTelbisesCatalog.json; sourceTree = "<group>"; };
+		66E772BD36D3EE0C3468A6BB /* ShoppingAgent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShoppingAgent.swift; path = Sources/TelbisesAIDealScout/Agents/ShoppingAgent.swift; sourceTree = "<group>"; };
+		6B444F55492EF489C9523831 /* CartViewModelTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CartViewModelTests.swift; path = Tests/TelbisesAIDealScoutTests/CartViewModelTests.swift; sourceTree = "<group>"; };
+		7C53B96F16A3869E64357C08 /* CartViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CartViewModel.swift; path = Sources/TelbisesAIDealScout/Features/Cart/CartViewModel.swift; sourceTree = "<group>"; };
+		7D32803639B4B03842F9CB39 /* DefaultShoppingAgentTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultShoppingAgentTests.swift; path = Tests/TelbisesAIDealScoutTests/DefaultShoppingAgentTests.swift; sourceTree = "<group>"; };
+		81E81EF45EEC3F301F370F1B /* CartView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CartView.swift; path = Sources/TelbisesAIDealScout/Features/Cart/CartView.swift; sourceTree = "<group>"; };
+		82FB12364BC3285EAE9F3667 /* TelbisesDetailViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TelbisesDetailViewModel.swift; path = Sources/TelbisesAIDealScout/Features/Telbises/TelbisesDetailViewModel.swift; sourceTree = "<group>"; };
+		94F9F53989DB5EDD0DD76A89 /* ResultsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultsView.swift; path = Sources/TelbisesAIDealScout/Features/Results/ResultsView.swift; sourceTree = "<group>"; };
+		A57F2E44E5A52A451D4EBCD2 /* Services.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Services.swift; path = Sources/TelbisesAIDealScout/Services/Services.swift; sourceTree = "<group>"; };
+		AC008BF43B6ADEA7CA051D17 /* TelbisesCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TelbisesCardView.swift; path = Sources/TelbisesAIDealScout/UIComponents/TelbisesCardView.swift; sourceTree = "<group>"; };
+		B76BCFCD346C3B61E3709A17 /* BrandTheme.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BrandTheme.swift; path = Sources/TelbisesAIDealScout/UIComponents/BrandTheme.swift; sourceTree = "<group>"; };
+		BD63B1C12B6D1BCE86F2EA3C /* MockIntentParserServiceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MockIntentParserServiceTests.swift; path = Tests/TelbisesAIDealScoutTests/MockIntentParserServiceTests.swift; sourceTree = "<group>"; };
+		C24DB1001F21147952D220B8 /* DefaultRankingServiceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultRankingServiceTests.swift; path = Tests/TelbisesAIDealScoutTests/DefaultRankingServiceTests.swift; sourceTree = "<group>"; };
+		C3B60C461BC47EE355B484D1 /* Models.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Models.swift; path = Sources/TelbisesAIDealScout/Models/Models.swift; sourceTree = "<group>"; };
+		C6685FCE699026D183735CAA /* AppRootView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AppRootView.swift; path = Sources/TelbisesAIDealScout/App/AppRootView.swift; sourceTree = "<group>"; };
+		D961EC2B4B8B3559000A9E7D /* ShopifyStorefrontService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShopifyStorefrontService.swift; path = Sources/TelbisesAIDealScout/Services/ShopifyStorefrontService.swift; sourceTree = "<group>"; };
+		DC7F02761AA186E293522567 /* HomeChatViewModelTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HomeChatViewModelTests.swift; path = Tests/TelbisesAIDealScoutTests/HomeChatViewModelTests.swift; sourceTree = "<group>"; };
+		E442041266CA55677670A82D /* TelbisesAIDealScoutApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TelbisesAIDealScoutApp.swift; path = Sources/TelbisesAIDealScout/App/TelbisesAIDealScoutApp.swift; sourceTree = "<group>"; };
+		E61EF1AF41C52158CE247FB8 /* TelbisesDetailViewModelTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TelbisesDetailViewModelTests.swift; path = Tests/TelbisesAIDealScoutTests/TelbisesDetailViewModelTests.swift; sourceTree = "<group>"; };
+		E8883E6CEA2D151094AAD15E /* DealProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DealProvider.swift; path = Sources/TelbisesAIDealScout/Services/DealProvider.swift; sourceTree = "<group>"; };
+		F0B536C7B28A1AAE1579A342 /* MockDeals.json */ = {isa = PBXFileReference; includeInIndex = 1; name = MockDeals.json; path = Sources/TelbisesAIDealScout/Resources/MockDeals.json; sourceTree = "<group>"; };
+		F34908E343678634EE35FE70 /* DefaultExplanationServiceTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultExplanationServiceTests.swift; path = Tests/TelbisesAIDealScoutTests/DefaultExplanationServiceTests.swift; sourceTree = "<group>"; };
+		F78495179CCDBC2605E9E01F /* OpenAILiveDealScoutService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OpenAILiveDealScoutService.swift; path = Sources/TelbisesAIDealScout/AI/OpenAILiveDealScoutService.swift; sourceTree = "<group>"; };
+		FA001063C054E149AD36B89C /* ResultsViewModelTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResultsViewModelTests.swift; path = Tests/TelbisesAIDealScoutTests/ResultsViewModelTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		835BA2434F42E93D8E3C51E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E94AB152122B144708497DF /* Foundation.framework in Frameworks */,
+				1D74FB0C729D7182C2140FBC /* TelbisesAIDealScout.app in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A58A376D2F1EFF4C33BCDD47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FD6C603A07EFE070A236B6E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19128389B48E1BC84CF94F10 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3165C278CEB9ABEE5422221B /* TelbisesAIDealScoutTests */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		3165C278CEB9ABEE5422221B /* TelbisesAIDealScoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				6B444F55492EF489C9523831 /* CartViewModelTests.swift */,
+				F34908E343678634EE35FE70 /* DefaultExplanationServiceTests.swift */,
+				C24DB1001F21147952D220B8 /* DefaultRankingServiceTests.swift */,
+				7D32803639B4B03842F9CB39 /* DefaultShoppingAgentTests.swift */,
+				DC7F02761AA186E293522567 /* HomeChatViewModelTests.swift */,
+				BD63B1C12B6D1BCE86F2EA3C /* MockIntentParserServiceTests.swift */,
+				FA001063C054E149AD36B89C /* ResultsViewModelTests.swift */,
+				4667774024E87044C0254838 /* StubServices.swift */,
+				E61EF1AF41C52158CE247FB8 /* TelbisesDetailViewModelTests.swift */,
+				0079AA01EB933871046CD7FA /* TestFixtures.swift */,
+			);
+			name = TelbisesAIDealScoutTests;
+			sourceTree = "<group>";
+		};
+		37E8CBFFDCDFFF9175AF9932 /* TelbisesAIDealScout */ = {
+			isa = PBXGroup;
+			children = (
+				4FCF75D6F10FA44C5FB0FBC9 /* LLMServices.swift */,
+				3C9753021235650E9C734793 /* MockServices.swift */,
+				F78495179CCDBC2605E9E01F /* OpenAILiveDealScoutService.swift */,
+				66E772BD36D3EE0C3468A6BB /* ShoppingAgent.swift */,
+				C6685FCE699026D183735CAA /* AppRootView.swift */,
+				E442041266CA55677670A82D /* TelbisesAIDealScoutApp.swift */,
+				0E29CB290FFD8D90A5C452F2 /* AppConfig.swift */,
+				5A267F85373749E72CB2E655 /* AppCoordinator.swift */,
+				4A65028E59094156224FE21D /* ServiceContainer.swift */,
+				81E81EF45EEC3F301F370F1B /* CartView.swift */,
+				7C53B96F16A3869E64357C08 /* CartViewModel.swift */,
+				4D8FE35E01C36FB5A7534F32 /* HomeChatView.swift */,
+				64F65883105F65DCC382732F /* HomeChatViewModel.swift */,
+				94F9F53989DB5EDD0DD76A89 /* ResultsView.swift */,
+				3074BDCFDF89CE598896B88A /* ResultsViewModel.swift */,
+				315433FCC1C5CDBF65E07149 /* TelbisesDetailView.swift */,
+				82FB12364BC3285EAE9F3667 /* TelbisesDetailViewModel.swift */,
+				C3B60C461BC47EE355B484D1 /* Models.swift */,
+				E8883E6CEA2D151094AAD15E /* DealProvider.swift */,
+				2525CADE7004B5D89B47C004 /* FallbackTelbisesCatalogService.swift */,
+				A57F2E44E5A52A451D4EBCD2 /* Services.swift */,
+				D961EC2B4B8B3559000A9E7D /* ShopifyStorefrontService.swift */,
+				B76BCFCD346C3B61E3709A17 /* BrandTheme.swift */,
+				229DC73AF273072B640368B1 /* DealCardView.swift */,
+				2BB9A800AB043809436B02F2 /* SafariView.swift */,
+				AC008BF43B6ADEA7CA051D17 /* TelbisesCardView.swift */,
+				F0B536C7B28A1AAE1579A342 /* MockDeals.json */,
+				6632CD0CE3900C730E195785 /* MockTelbisesCatalog.json */,
+			);
+			name = TelbisesAIDealScout;
+			sourceTree = "<group>";
+		};
+		40A517EFDDB941229388B8B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5395785A02736E787FCA89E0 /* TelbisesAIDealScout.app */,
+				5C9002207F95911A564DDC8A /* TelbisesAIDealScoutTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4D1CB9CA78465C6037E8FDE1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				213AE78D20C618BA78D60A44 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		713B05597E4DBA90F5D3DAD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D1CB9CA78465C6037E8FDE1 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75C9C37FBA12C6283F3FF273 = {
+			isa = PBXGroup;
+			children = (
+				40A517EFDDB941229388B8B5 /* Products */,
+				713B05597E4DBA90F5D3DAD7 /* Frameworks */,
+				BF73CA3C912FC985E94CAE5D /* Sources */,
+				19128389B48E1BC84CF94F10 /* Tests */,
+			);
+			sourceTree = "<group>";
+		};
+		BF73CA3C912FC985E94CAE5D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				37E8CBFFDCDFFF9175AF9932 /* TelbisesAIDealScout */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EB159C227C821F5D90247AF /* TelbisesAIDealScoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C6A081854F494D5CDC8494B /* Build configuration list for PBXNativeTarget "TelbisesAIDealScoutTests" */;
+			buildPhases = (
+				7016268AB9326E3CCE32406A /* Sources */,
+				835BA2434F42E93D8E3C51E7 /* Frameworks */,
+				1F443AE2FD4CBCEBF4F1F274 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				527E59139E56F7946F510897 /* PBXTargetDependency */,
+			);
+			name = TelbisesAIDealScoutTests;
+			productName = TelbisesAIDealScoutTests;
+			productReference = 5C9002207F95911A564DDC8A /* TelbisesAIDealScoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		61416132271000CCE8D2443D /* TelbisesAIDealScout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 932777FA58CF1E70C184C55A /* Build configuration list for PBXNativeTarget "TelbisesAIDealScout" */;
+			buildPhases = (
+				2A962F4488F2B6EF804C6EFB /* Sources */,
+				A58A376D2F1EFF4C33BCDD47 /* Frameworks */,
+				294FF71E33BB29EFE8184D57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TelbisesAIDealScout;
+			productName = TelbisesAIDealScout;
+			productReference = 5395785A02736E787FCA89E0 /* TelbisesAIDealScout.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B736C8E5580786D06B878882 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 904FFB5F0FBD96017011C277 /* Build configuration list for PBXProject "TelbisesAIDealScout" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 75C9C37FBA12C6283F3FF273;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 40A517EFDDB941229388B8B5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				61416132271000CCE8D2443D /* TelbisesAIDealScout */,
+				1EB159C227C821F5D90247AF /* TelbisesAIDealScoutTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F443AE2FD4CBCEBF4F1F274 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		294FF71E33BB29EFE8184D57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1E7197A6E78DC7A6D3F6F93 /* MockDeals.json in Resources */,
+				E1DEF5C3C2D42650C16B3D10 /* MockTelbisesCatalog.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A962F4488F2B6EF804C6EFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2932931BF1E569F0F66FB5C9 /* LLMServices.swift in Sources */,
+				AF1E3D135ACE0F5758A9C28D /* MockServices.swift in Sources */,
+				999274AC555E02A42B3DCB3A /* OpenAILiveDealScoutService.swift in Sources */,
+				7E27625B71699A8F552CD3EA /* ShoppingAgent.swift in Sources */,
+				8E08F328380052A29DE30558 /* AppRootView.swift in Sources */,
+				5D0739EDAC1D61FC4B1C7B19 /* TelbisesAIDealScoutApp.swift in Sources */,
+				8955BD4EF07991C9130A54ED /* AppConfig.swift in Sources */,
+				12AF2D0981BDC2DF8E3DC368 /* AppCoordinator.swift in Sources */,
+				88EE69BE2F78E258CA1F0109 /* ServiceContainer.swift in Sources */,
+				420335451DBC16E284140F71 /* CartView.swift in Sources */,
+				2F6BBB29EA242C1067344894 /* CartViewModel.swift in Sources */,
+				FF57BE90601B6809A413B4CD /* HomeChatView.swift in Sources */,
+				184EC0E56395368F27A9B51F /* HomeChatViewModel.swift in Sources */,
+				6335F60CB3F3B4F4F079500A /* ResultsView.swift in Sources */,
+				C53B97D6B380748DD3CF0221 /* ResultsViewModel.swift in Sources */,
+				D2C108E947F68C4D77218E1F /* TelbisesDetailView.swift in Sources */,
+				9016876BA2804B186A3BC569 /* TelbisesDetailViewModel.swift in Sources */,
+				F1BACF76335CF361BA42EB49 /* Models.swift in Sources */,
+				2F7C9240064E3EFEE8B99598 /* DealProvider.swift in Sources */,
+				F465E8C2FF67A0EB0F9CE2E8 /* FallbackTelbisesCatalogService.swift in Sources */,
+				1377724122DCBA3B853BC1D6 /* Services.swift in Sources */,
+				157869EE72805CD55270153A /* ShopifyStorefrontService.swift in Sources */,
+				08BF8747DF82DE75238A3097 /* BrandTheme.swift in Sources */,
+				973894C0700295D1F4484349 /* DealCardView.swift in Sources */,
+				798E419F2B5D4BB232583F5A /* SafariView.swift in Sources */,
+				E6F8A819609DB9D40B87EEB9 /* TelbisesCardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7016268AB9326E3CCE32406A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B718566C73C55D64A5F5CEF4 /* CartViewModelTests.swift in Sources */,
+				1B3B0FED9638120EE1AC9527 /* DefaultExplanationServiceTests.swift in Sources */,
+				D9E76FFF0413E9EEDA73BBED /* DefaultRankingServiceTests.swift in Sources */,
+				591A83067A0CDF756D30EAD7 /* DefaultShoppingAgentTests.swift in Sources */,
+				B9B60EB399EC1344CBE593C1 /* HomeChatViewModelTests.swift in Sources */,
+				0181026654AC2F52AEFD4221 /* MockIntentParserServiceTests.swift in Sources */,
+				47F6DDDA64EF536F276C0735 /* ResultsViewModelTests.swift in Sources */,
+				2FD90D232D982C8C60B9C962 /* StubServices.swift in Sources */,
+				E43C0DCB439281968380764F /* TelbisesDetailViewModelTests.swift in Sources */,
+				34BB5AA54FC5EA3324471AF2 /* TestFixtures.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		527E59139E56F7946F510897 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TelbisesAIDealScout;
+			target = 61416132271000CCE8D2443D /* TelbisesAIDealScout */;
+			targetProxy = 7EE6541C4B53707EB23A8DD6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		22296C090AFFABB546AB9460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.telbises.TelbisesAIDealScoutTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelbisesAIDealScout.app/TelbisesAIDealScout";
+			};
+			name = Debug;
+		};
+		40C37138BEB6BD312F7A2393 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.telbises.TelbisesAIDealScout;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75A0CF5B6688D041C1151BE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		89E1CEE92930FF8F2F067C85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		953B12710DEDC9F311105726 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.telbises.TelbisesAIDealScout;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DE6F1C02A841D90879539E79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.telbises.TelbisesAIDealScoutTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TelbisesAIDealScout.app/TelbisesAIDealScout";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C6A081854F494D5CDC8494B /* Build configuration list for PBXNativeTarget "TelbisesAIDealScoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE6F1C02A841D90879539E79 /* Release */,
+				22296C090AFFABB546AB9460 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		904FFB5F0FBD96017011C277 /* Build configuration list for PBXProject "TelbisesAIDealScout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75A0CF5B6688D041C1151BE0 /* Debug */,
+				89E1CEE92930FF8F2F067C85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		932777FA58CF1E70C184C55A /* Build configuration list for PBXNativeTarget "TelbisesAIDealScout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40C37138BEB6BD312F7A2393 /* Release */,
+				953B12710DEDC9F311105726 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B736C8E5580786D06B878882 /* Project object */;
+}
